@@ -7,3 +7,9 @@ Movimentação por natureza da informação: patrimonial;left;balver;movimentacao_cr
 Movimentação por natureza da informação: patrimonial;left;balver;movimentacao_credito;conta_contabil.str.startswith('2.');
 Movimentação por natureza da informação: patrimonial;left;balver;movimentacao_credito;conta_contabil.str.startswith('3.');
 Movimentação por natureza da informação: patrimonial;left;balver;movimentacao_credito;conta_contabil.str.startswith('4.');
+Suprimentos de fundos a apropriar;left;balver;saldo_atual_debito;conta_contabil.str.startswith('1.1.3.1.1.01.');
+Suprimentos de fundos a apropriar;left;balver;saldo_atual_credito;conta_contabil.str.startswith('1.1.3.1.1.01.');1
+Suprimentos de fundos a apropriar;right;balver;saldo_atual_credito;conta_contabil.str.startswith('8.9.1.2.1.01.');
+Suprimentos de fundos a apropriar;right;balver;saldo_atual_debito;conta_contabil.str.startswith('8.9.1.2.1.01.');1
+Suprimentos de fundos a apropriar;right;balver;saldo_atual_credito;conta_contabil.str.startswith('8.9.1.2.1.02.');
+Suprimentos de fundos a apropriar;right;balver;saldo_atual_debito;conta_contabil.str.startswith('8.9.1.2.1.02.');1

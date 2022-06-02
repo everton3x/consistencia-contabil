@@ -14,7 +14,8 @@ entidades = {
     0: {
         'orgaos': (2, 3, 4, 5, 6, 7, 8, 9, 10, 11),
         'nome': 'Prefeitura',
-        'rules': ('agnostic.csv', 'pm.csv')
+        #'rules': ('agnostic.csv', 'pm.csv')
+        'rules': ('agnostic.csv',)
     },
     1: {
         'orgaos': (12,),
@@ -79,6 +80,7 @@ rulelist = rules['rule'].unique()
 
 # Cria o df de resultados
 results = pd.DataFrame(columns=['rule', 'side', 'dataset', 'field', 'filter', 'minus', 'left_val', 'right_val', 'diff'])
+summary = pd.DataFrame(columns=['rule', 'left', 'right', 'diff'])
 
 # Processa as rules
 for rulename in rulelist:
@@ -111,7 +113,7 @@ for rulename in rulelist:
             if minus is not False:
                 val = val * -1
             val = round(val, 2)
-            rules.at[key, 'rigth_val'] = val
+            rules.at[key, 'right_val'] = val
             rval += val
     diff = round(lval - rval, 2)
     total = pd.DataFrame({
@@ -121,13 +123,51 @@ for rulename in rulelist:
         'field': None,
         'filter': None,
         'minus': None,
-        'left_val': lval,
-        'right_val': rval,
-        'diff': diff
+        'left_val': round(lval, 2),
+        'right_val': round(rval, 2),
+        'diff': round(diff, 2)
+    }, index=[0])
+    total_resume = pd.DataFrame({
+        'rule': rulename,
+        'left': round(lval, 2),
+        'right': round(rval, 2),
+        'diff': round(diff, 2)
     }, index=[0])
     results = pd.concat([results, total], ignore_index=True)
+    summary = pd.concat([summary, total_resume], ignore_index=True)
 
 rules = pd.concat([rules, results], ignore_index=True)
+
+details = {}
+for rulename in rulelist:
+    left = rules.query(f'rule=="{rulename}" & side == "left"')[['dataset', 'field', 'filter', 'left_val', 'minus']].to_dict('records')
+    right = rules.query(f'rule=="{rulename}" & side == "right"')[['dataset', 'field', 'filter', 'right_val', 'minus']].to_dict('records')
+    total = rules.query(f'rule=="{rulename}" & side == "total"')[['left_val', 'right_val', 'diff']].to_dict('records')
+    details[rulename] = {'total': total}
+    llen = len(left)
+    rlen = len(right)
+    if llen < rlen:
+        left = left + [{'dataset': '', 'field': '', 'filter': '', 'left_val': '', 'minus': ''} for i in range(0, rlen-llen, 1)]
+    if rlen < llen:
+        right = right + [{'dataset': '', 'field': '', 'filter': '', 'right_val': '', 'minus': ''} for i in range(0, llen-rlen, 1)]
+    lst = []
+    for k in range(0, len(left)):
+        lst.append({
+            'l_dataset': left[k]['dataset'],
+            'l_field': left[k]['field'],
+            'l_filter': left[k]['filter'],
+            'l_value': left[k]['left_val'],
+            'l_minus': left[k]['minus'],
+            'r_dataset': right[k]['dataset'],
+            'r_field': right[k]['field'],
+            'r_filter': right[k]['filter'],
+            'r_value': right[k]['right_val'],
+            'r_minus': right[k]['minus'],
+        })
+    details[rulename] = {
+        'items': lst,
+        'total': total[0]
+    }
 
 # Salva os resultados
 rules.to_excel(path.join('.', outputdir, 'result.xlsx'))
@@ -141,7 +181,7 @@ template = jinja_env.get_template('report.html')
 
 database = datasets['balver']['data_final'].unique()[0]
 
-html = template.render(database=database, perfil=profile['nome'])
+html = template.render(database=database, perfil=profile['nome'], summary=summary, details=details)
 
 with open(path.join('.', outputdir, 'report.html'), 'w', encoding='utf-8') as f:
     f.write(html)
