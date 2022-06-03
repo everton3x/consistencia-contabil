@@ -2,92 +2,138 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Consistência Contábil: data base {{ database }}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/semantic.min.css">
 </head>
 <body>
-    <h1>Teste de Consistência Contábil</h1>
-    <h2>Perfil: {{ perfil }}</h2>
-    <h3>Data base de {{ database }}</h3>
+    <main class="ui container">
+        <header class="ui blue segment">
+            <h1 class="ui header center aligned">Teste de Consistência Contábil</h1>
+            <h2 class="ui header center aligned">Perfil: {{ perfil }}</h2>
+            <h3 class="ui header center aligned">Mês de
+                <time datetime="{{ datetime.strptime(database, '%Y-%m-%d').strftime('%Y-%m-%d') }}">{{ datetime.strptime(database, '%Y-%m-%d').strftime('%m/%Y') }}</time>
+            </h3>
+            <div class="ui message">
+                <div class="header">Dados dos arquivos do SIAPC/PAD:</div>
+                <p>Data inicial: <time datetime="{{ datetime.strptime(datainicial, '%Y-%m-%d').strftime('%Y-%m-%d') }}">{{ datetime.strptime(datainicial, '%Y-%m-%d').strftime('%d/%m/%Y') }}</time></p>
+                <p>Data final: <time datetime="{{ datetime.strptime(database, '%Y-%m-%d').strftime('%Y-%m-%d') }}">{{ datetime.strptime(database, '%Y-%m-%d').strftime('%d/%m/%Y') }}</time></p>
+                <p>Data de geração: <time datetime="{{ datetime.strptime(datageracao, '%Y-%m-%d').strftime('%Y-%m-%d') }}">{{ datetime.strptime(datageracao, '%Y-%m-%d').strftime('%d/%m/%Y') }}</time></p>
+            </div>
+        </header>
 
-    <h2>Resumo</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Regra</th>
-                <th>Valor Esquerdo</th>
-                <th>Valor Direito</th>
-                <th>Diferença</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for index, item in summary.iterrows() %}
-        <tr>
-            <td><a href="#{{ item['rule'] }}">{{ item['rule'] }}</a></td>
-            <td>{{ item['left'] }}</td>
-            <td>{{ item['right'] }}</td>
-            <td>{{ item['diff'] }}</td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <h2>Detalhamento dos testes</h2>
-    {% for rulename, item in details.items() %}
-        <a id="{{ rulename }}"></a>
-        <table border="1">
-            <caption>{{ rulename }}</caption>
-            <thead>
-                <tr>
-                    <th colspan="4">Esquerda</th>
-                    <th colspan="4">Direita</th>
-                    <th rowspan="2">Diferença</th>
-                </tr>
-                <tr>
-                    <th>Tabela</th>
-                    <th>Campo</th>
-                    <th>Filtro</th>
-                    <th>Valor</th>
-                    <th>Tabela</th>
-                    <th>Campo</th>
-                    <th>Filtro</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for i in item['items'] %}
-                {% if i['l_minus'] %}
-                    {% set l_minus = '(-) ' %}
+        <article class="ui green segment">
+            <h2 class="ui header">Resumo</h2>
+            <table class="ui striped table">
+                <thead>
+                    <tr>
+                        <th>Regra</th>
+                        <th class="right aligned">Valor Esquerdo</th>
+                        <th class="right aligned">Valor Direito</th>
+                        <th class="right aligned">Diferença</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for index, item in summary.iterrows() %}
+                {% if item['diff'] != 0 %}
+                    {% set isnegative = ' negative' %}
                 {% else %}
-                    {% set l_minus = ' ' %}
-                {% endif %}
-                {% if i['r_minus'] %}
-                    {% set r_minus = '(-) ' %}
-                {% else %}
-                    {% set r_minus = ' ' %}
+                    {% set isnegative = ' positive' %}
                 {% endif %}
                 <tr>
-                    <td>{{ i['l_dataset'] }}</td>
-                    <td>{{ l_minus }} {{ i['l_field'] }}</td>
-                    <td>{{ i['l_filter'] }}</td>
-                    <td>{{ i['l_value'] }}</td>
-                    <td>{{ r_minus }} {{ i['r_dataset'] }}</td>
-                    <td>{{ i['r_field'] }}</td>
-                    <td>{{ i['r_filter'] }}</td>
-                    <td>{{ i['r_value'] }}</td>
-                    <td></td>
+                    <td><a href="#{{ item['rule'] }}">{{ item['rule'] }}</a></td>
+                    <td class="right aligned">{{ '{:_.2f}'.format(item['left']).replace('.', ',').replace('_',
+                        '.') }}</td>
+                    <td class="right aligned">{{ '{:_.2f}'.format(item['right']).replace('.', ',').replace('_',
+                        '.') }}</td>
+                    <td class="right aligned{{ isnegative }}">{{ '{:_.2f}'.format(item['diff']).replace('.', ',').replace('_',
+                        '.') }}</td>
                 </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </article>
+
+        <article class="ui teal segment">
+            <h2 class="ui header">Detalhamento dos testes</h2>
+            {% for rulename, item in details.items() %}
+                <a id="{{ rulename }}"></a>
+                <table class="ui small table">
+                    <caption>
+                        <div class="ui header">{{ rulename }}</div>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th colspan="4" class="right aligned">Esquerda</th>
+                            <th colspan="4" class="right aligned">Direita</th>
+                            <th rowspan="2" class="right aligned">Diferença</th>
+                        </tr>
+                        <tr>
+                            <th>Tabela</th>
+                            <th>Campo</th>
+                            <th>Filtro</th>
+                            <th class="right aligned">Valor</th>
+                            <th>Tabela</th>
+                            <th>Campo</th>
+                            <th>Filtro</th>
+                            <th class="right aligned">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in item['items'] %}
+                        {% if i['l_minus'] %}
+                            {% set l_minus = '(-) ' %}
+                        {% else %}
+                            {% set l_minus = ' ' %}
+                        {% endif %}
+                        {% if i['r_minus'] %}
+                            {% set r_minus = '(-) ' %}
+                        {% else %}
+                            {% set r_minus = ' ' %}
+                        {% endif %}
+
+                        <tr>
+                            <td>{{ i['l_dataset'] }}</td>
+                            <td>{{ l_minus }} {{ i['l_field'] }}</td>
+                            <td>{{ i['l_filter'] }}</td>
+                            <td class="right aligned">{{ '{:_.2f}'.format(i['l_value']|float).replace('.', ',').replace('_',
+                        '.') }}</td>
+                            <td>{{ r_minus }} {{ i['r_dataset'] }}</td>
+                            <td>{{ i['r_field'] }}</td>
+                            <td>{{ i['r_filter'] }}</td>
+                            <td class="right aligned">{{ '{:_.2f}'.format(i['r_value']|float).replace('.', ',').replace('_',
+                        '.') }}</td>
+                            <td></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        {% if item['total']['diff'] != 0 %}
+                            {% set tisnegative = ' negative' %}
+                        {% else %}
+                            {% set tisnegative = ' positive' %}
+                        {% endif %}
+                        <tr>
+                            <th colspan="3">Total</th>
+                            <th class="right aligned">{{ '{:_.2f}'.format(item['total']['left_val']).replace('.', ',').replace('_',
+                        '.') }}</th>
+                            <th colspan="3">Total</th>
+                            <th class="right aligned">{{ '{:_.2f}'.format(item['total']['right_val']).replace('.', ',').replace('_',
+                        '.') }}</th>
+                            <th class="right aligned{{ tisnegative }}">{{ '{:_.2f}'.format(item['total']['diff']).replace('.', ',').replace('_',
+                        '.') }}</th>
+                        </tr>
+                    </tfoot>
+                </table>
             {% endfor %}
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="3">Total</th>
-                    <th>{{ item['total']['left_val'] }}</th>
-                    <th colspan="3">Total</th>
-                    <th>{{ item['total']['right_val'] }}</th>
-                    <th>{{ item['total']['diff'] }}</th>
-                </tr>
-            </tfoot>
-        </table>
-    {% endfor %}
+        </article>
+
+        <footer class="ui blue segment">
+            <div class="right aligned">Relatório gerado em
+                <time datetime="{{ datetime.now().strftime('%Y-%m-%d %H:%M:%S') }}">{{ datetime.now().strftime('%d/%m/%Y, %H:%M:%S') }}</time></div>
+        </footer>
+    </main>
 </body>
 </html>

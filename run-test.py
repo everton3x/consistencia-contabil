@@ -3,12 +3,26 @@ Executa os testes
 """
 
 import argparse
+from datetime import datetime
 import pandas as pd
+import logging
+import sys
 from os import path
 from charset_normalizer import from_path
 from io import StringIO
 from jinja2 import Environment, FileSystemLoader
 
+#Configuração do logger
+logging.basicConfig(
+    level=logging.INFO,
+    handlers=[
+        logging.StreamHandler(sys.stdout)
+    ],
+    format='%(asctime)s %(levelname)s %(message)s',
+    datefmt='%d/%m/%Y %H:%M:%S'
+)
+
+logging.info('Carregando as configurações...')
 # Configurações
 entidades = {
     0: {
@@ -39,6 +53,7 @@ outputdir = r'output'
 templatesdir = r'templates'
 
 # Parse command line arguments
+logging.info('Identificando argumentos da linha de comando...')
 parser = argparse.ArgumentParser(
     prog='run-test',
     description='Executa os testes de consistência contábil',
@@ -51,9 +66,13 @@ mes = str(parser.parse_args().mes[0]).rjust(2, '0')
 ano = str(parser.parse_args().ano[0])
 
 # Seleciona o profile
+logging.info('Profile selecionado:')
 profile = entidades[profile]
+logging.debug(profile)
+
 
 # Carrega as rules
+logging.info('Carregando as regras de consistência...')
 rules = pd.DataFrame(columns=['rule', 'side', 'dataset', 'field', 'filter', 'subtract'])
 for rulefile in profile['rules']:
     csv = StringIO(str(from_path(path.join('.', rulesdir, rulefile)).best()))
@@ -63,11 +82,14 @@ rules.fillna(False, axis='columns', inplace=True)
 rules['left_val'] = 0.0
 rules['right_val'] = 0.0
 rules['diff'] = None
+
+logging.info('Carregando o conjunto de dados...')
 # Carrega e prepara os csv do PAD
 csvdir = path.join(padcsvdir, ano+'-'+mes)
 datasets = {}
 
 # bal_ver
+logging.debug('...BAL_VER.txt')
 dados = StringIO(str(from_path(path.join(csvdir, 'bal_ver.csv')).best()))
 df = pd.read_csv(dados, sep=';', parse_dates=True, infer_datetime_format=True, decimal=',', thousands='.')
 datasets['balver'] = df[
@@ -76,15 +98,19 @@ datasets['balver'] = df[
 ].copy()
 
 # Cria a lista de nomes de regras
+logging.info('Montando lista de regras...')
 rulelist = rules['rule'].unique()
 
 # Cria o df de resultados
+logging.info('Preparando armazém de resultados...')
 results = pd.DataFrame(columns=['rule', 'side', 'dataset', 'field', 'filter', 'minus', 'left_val', 'right_val', 'diff'])
 summary = pd.DataFrame(columns=['rule', 'left', 'right', 'diff'])
 
 # Processa as rules
+logging.info('Processando regras...')
 for rulename in rulelist:
     rulespec = rules[rules['rule'] == rulename]
+    logging.debug(f'...{rulename}')
     # Valor esquerdo
     lrule = rulespec[rulespec['side'] == 'left']
     lval = 0.0
@@ -138,8 +164,10 @@ for rulename in rulelist:
 
 rules = pd.concat([rules, results], ignore_index=True)
 
+logging.info('Montando resultados detalhados...')
 details = {}
 for rulename in rulelist:
+    logging.debug(f'...{rulename}')
     left = rules.query(f'rule=="{rulename}" & side == "left"')[['dataset', 'field', 'filter', 'left_val', 'minus']].to_dict('records')
     right = rules.query(f'rule=="{rulename}" & side == "right"')[['dataset', 'field', 'filter', 'right_val', 'minus']].to_dict('records')
     total = rules.query(f'rule=="{rulename}" & side == "total"')[['left_val', 'right_val', 'diff']].to_dict('records')
@@ -170,9 +198,11 @@ for rulename in rulelist:
     }
 
 # Salva os resultados
+logging.info('Salvando resultados...')
 rules.to_excel(path.join('.', outputdir, 'result.xlsx'))
 
 # Cria o relatório HTML
+logging.info('Criando relatório HTML...')
 jinja_env = Environment(
     loader=FileSystemLoader(templatesdir)
 )
@@ -180,8 +210,13 @@ jinja_env = Environment(
 template = jinja_env.get_template('report.html')
 
 database = datasets['balver']['data_final'].unique()[0]
+datainicial = datasets['balver']['data_inicial'].unique()[0]
+datageracao = datasets['balver']['data_geracao'].unique()[0]
 
-html = template.render(database=database, perfil=profile['nome'], summary=summary, details=details)
+html = template.render(database=database, perfil=profile['nome'], summary=summary, details=details, datetime=datetime, datainicial=datainicial, datageracao=datageracao)
 
+logging.info('Salvando relatório HTML...')
 with open(path.join('.', outputdir, 'report.html'), 'w', encoding='utf-8') as f:
     f.write(html)
+
+logging.info('Processo terminado!')
