@@ -1,7 +1,7 @@
 """
 Executa os testes
 """
-
+import os
 import argparse
 from datetime import datetime
 import pandas as pd
@@ -218,5 +218,7 @@ html = template.render(database=database, perfil=profile['nome'], summary=summar
 logging.info('Salvando relatório HTML...')
 with open(path.join('.', outputdir, 'report.html'), 'w', encoding='utf-8') as f:
     f.write(html)
+
+print(r'file:///'+os.path.join(os.getcwd(), r'output/report.html').replace('\\', '/'))
 
 logging.info('Processo terminado!')
