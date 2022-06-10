@@ -178,13 +178,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\rules\intra_ofss.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=";" />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\rules\intra_ofss_resultado.csv">
           <value>
             <Attribute>
