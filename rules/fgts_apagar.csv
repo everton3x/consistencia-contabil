@@ -1,0 +1,5 @@
+rule;side;dataset;field;filter;minus
+FGTS a pagar;left;balver;saldo_atual_credito;conta_contabil.str.startswith('2.1.1.4.3.05.02.');
+FGTS a pagar;left;balver;saldo_atual_debito;conta_contabil.str.startswith('2.1.1.4.3.05.02.');1
+FGTS a pagar;right;liquidacao;valor_liquidacao;rubrica.str.startswith('3.1.90.13.01');
+FGTS a pagar;right;pagamento;valor_pagamento;rubrica.str.startswith('3.1.90.13.01');1

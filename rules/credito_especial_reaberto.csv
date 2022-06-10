@@ -1,0 +1,4 @@
+rule;side;dataset;field;filter;minus
+Crédito adicional - especial reaberto;left;balver;saldo_atual_debito;conta_contabil.str.startswith('5.2.2.1.2.02.02.');
+Crédito adicional - especial reaberto;left;balver;saldo_atual_credito;conta_contabil.str.startswith('5.2.2.1.2.02.02.');1
+Crédito adicional - especial reaberto;right;decreto;valor_saldo_reaberto;orgao>0;

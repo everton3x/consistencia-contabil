@@ -1,0 +1,7 @@
+rule;side;dataset;field;filter;minus
+Parcerias a apropriar;left;balver;saldo_atual_debito;conta_contabil.str.startswith('1.1.9.8.1.01.');
+Parcerias a apropriar;left;balver;saldo_atual_credito;conta_contabil.str.startswith('1.1.9.8.1.01.');1
+Parcerias a apropriar;right;balver;saldo_atual_credito;conta_contabil.str.startswith('8.1.2.2.1.01.02.');
+Parcerias a apropriar;right;balver;saldo_atual_debito;conta_contabil.str.startswith('8.1.2.2.1.01.02.');1
+Parcerias a apropriar;right;balver;saldo_atual_credito;conta_contabil.str.startswith('8.1.2.2.1.01.03.');
+Parcerias a apropriar;right;balver;saldo_atual_debito;conta_contabil.str.startswith('8.1.2.2.1.01.03.');1

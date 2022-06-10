@@ -1,0 +1,23 @@
+rule;side;dataset;field;filter;minus
+Situação financeira vs situação orçamentária;left;balver;saldo_atual_credito;conta_contabil.str.startswith('8.2.1.1.1.');
+Situação financeira vs situação orçamentária;left;balver;saldo_atual_debito;conta_contabil.str.startswith('8.2.1.1.1.');1
+Situação financeira vs situação orçamentária;right;balver;saldo_anterior_debito;conta_contabil.str.startswith('1.') & indicador_superavit_financeiro=='F';
+Situação financeira vs situação orçamentária;right;balver;saldo_anterior_credito;conta_contabil.str.startswith('1.') & indicador_superavit_financeiro=='F';1
+Situação financeira vs situação orçamentária;right;balver;saldo_anterior_credito;conta_contabil.str.startswith('2.1.') & indicador_superavit_financeiro=='F';1
+Situação financeira vs situação orçamentária;right;balver;saldo_anterior_debito;conta_contabil.str.startswith('2.1.') & indicador_superavit_financeiro=='F';
+Situação financeira vs situação orçamentária;right;balver;saldo_anterior_credito;conta_contabil.str.startswith('2.2.') & indicador_superavit_financeiro=='F';1
+Situação financeira vs situação orçamentária;right;balver;saldo_anterior_debito;conta_contabil.str.startswith('2.2.') & indicador_superavit_financeiro=='F';
+Situação financeira vs situação orçamentária;right;balver;saldo_anterior_credito;conta_contabil.str.startswith('8.2.1.1.2.');1
+Situação financeira vs situação orçamentária;right;balver;saldo_anterior_debito;conta_contabil.str.startswith('8.2.1.1.2.');
+Situação financeira vs situação orçamentária;right;balver;saldo_atual_credito;conta_contabil.str.startswith('4.5.1.');
+Situação financeira vs situação orçamentária;right;balver;saldo_atual_debito;conta_contabil.str.startswith('4.5.1.');1
+Situação financeira vs situação orçamentária;right;balrec;receita_realizada;orgao>0;
+Situação financeira vs situação orçamentária;right;baldesp;valor_empenhado;orgao>0;1
+Situação financeira vs situação orçamentária;right;balver;saldo_atual_debito;conta_contabil.str.startswith('3.5.1.');1
+Situação financeira vs situação orçamentária;right;balver;saldo_atual_credito;conta_contabil.str.startswith('3.5.1.');
+Situação financeira vs situação orçamentária;right;rp;nao_processados_cancelados;orgao>0;
+Situação financeira vs situação orçamentária;right;rp;processados_cancelados;orgao>0;
+Situação financeira vs situação orçamentária;right;balver;saldo_atual_debito;conta_contabil.str.startswith('3.6.1.7.1.08.02.');1
+Situação financeira vs situação orçamentária;right;balver;saldo_atual_credito;conta_contabil.str.startswith('3.6.1.7.1.08.02.');
+Situação financeira vs situação orçamentária;right;balver;saldo_atual_debito;conta_contabil.str.startswith('3.6.1.7.1.99.02.');1
+Situação financeira vs situação orçamentária;right;balver;saldo_atual_credito;conta_contabil.str.startswith('3.6.1.7.1.99.02.');

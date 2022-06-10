@@ -1,0 +1,9 @@
+rule;side;dataset;field;filter;minus
+Receita vs Despesa: intra-orçamentárias;left;balrec;receita_realizada;codigo_receita.str.startswith('7.');
+Receita vs Despesa: intra-orçamentárias;left;balrec;receita_realizada;codigo_receita.str.startswith('8.');
+Receita vs Despesa: intra-orçamentárias;right;baldesp;valor_pago;elemento.str.startswith('3.1.91.');
+Receita vs Despesa: intra-orçamentárias;right;baldesp;valor_pago;elemento.str.startswith('3.2.91.');
+Receita vs Despesa: intra-orçamentárias;right;baldesp;valor_pago;elemento.str.startswith('3.3.91.');
+Receita vs Despesa: intra-orçamentárias;right;baldesp;valor_pago;elemento.str.startswith('4.4.91.');
+Receita vs Despesa: intra-orçamentárias;right;baldesp;valor_pago;elemento.str.startswith('4.5.91.');
+Receita vs Despesa: intra-orçamentárias;right;baldesp;valor_pago;elemento.str.startswith('4.6.91.');

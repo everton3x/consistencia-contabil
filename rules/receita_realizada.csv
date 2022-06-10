@@ -1,0 +1,4 @@
+rule;side;dataset;field;filter;minus
+Receita realizada;left;balver;saldo_atual_credito;conta_contabil.str.startswith('6.2.1.2.');
+Receita realizada;left;balver;saldo_atual_debito;conta_contabil.str.startswith('6.2.1.2.');1
+Receita realizada;right;balrec;receita_realizada;caracteristica_peculiar_receita==0;

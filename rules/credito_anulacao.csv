@@ -1,0 +1,4 @@
+rule;side;dataset;field;filter;minus
+Dotação adicional por fonte - anulação de dotação;left;balver;saldo_atual_debito;conta_contabil.str.startswith('5.2.2.1.3.03.');
+Dotação adicional por fonte - anulação de dotação;left;balver;saldo_atual_credito;conta_contabil.str.startswith('5.2.2.1.3.03.');1
+Dotação adicional por fonte - anulação de dotação;right;decreto;valor_credito_adicional;origem_recurso==5 | origem_recurso==6;

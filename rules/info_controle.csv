@@ -1,0 +1,5 @@
+rule;side;dataset;field;filter;minus
+Movimentação por natureza da informação: controle;right;balver;movimentacao_debito;conta_contabil.str.startswith('7.');
+Movimentação por natureza da informação: controle;right;balver;movimentacao_debito;conta_contabil.str.startswith('8.');
+Movimentação por natureza da informação: controle;left;balver;movimentacao_credito;conta_contabil.str.startswith('7.');
+Movimentação por natureza da informação: controle;left;balver;movimentacao_credito;conta_contabil.str.startswith('8.');

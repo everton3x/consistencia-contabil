@@ -1,0 +1,7 @@
+rule;side;dataset;field;filter;minus
+Restos a Pagar Processados - inscrição no exercício;left;balver;saldo_anterior_debito;conta_contabil.str.startswith('5.3.2.7.');
+Restos a Pagar Processados - inscrição no exercício;left;balver;saldo_anterior_credito;conta_contabil.str.startswith('5.3.2.7.');1
+Restos a Pagar Processados - inscrição no exercício;right;rp;saldo_inicial_processados;ano_empenho==(ano_base - 1);
+Restos a Pagar Processados - inscrição no exercício - saldo inicial;left;balver;saldo_anterior_credito;conta_contabil.str.startswith('6.3.2.7.');
+Restos a Pagar Processados - inscrição no exercício - saldo inicial;left;balver;saldo_anterior_debito;conta_contabil.str.startswith('6.3.2.7.');1
+Restos a Pagar Processados - inscrição no exercício - saldo inicial;right;rp;saldo_inicial_processados;ano_empenho==(ano_base - 1);

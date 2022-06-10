@@ -1,0 +1,4 @@
+rule;side;dataset;field;filter;minus
+Previsão inicial da receita bruta;left;balver;saldo_atual_debito;conta_contabil.str.startswith('5.2.1.1.1.');
+Previsão inicial da receita bruta;left;balver;saldo_atual_credito;conta_contabil.str.startswith('5.2.1.1.1.');1
+Previsão inicial da receita bruta;right;balrec;receita_orcada;caracteristica_peculiar_receita==0;

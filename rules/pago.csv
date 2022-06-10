@@ -1,0 +1,7 @@
+rule;side;dataset;field;filter;minus
+Crédito pago;left;balver;saldo_atual_credito;conta_contabil.str.startswith('6.2.2.1.3.04.');
+Crédito pago;left;balver;saldo_atual_debito;conta_contabil.str.startswith('6.2.2.1.3.04.');1
+Crédito pago;right;baldesp;valor_pago;orgao>0;
+Empenhos pagos;left;balver;saldo_atual_credito;conta_contabil.str.startswith('6.2.2.9.2.01.04.');
+Empenhos pagos;left;balver;saldo_atual_debito;conta_contabil.str.startswith('6.2.2.9.2.01.04.');1
+Empenhos pagos;right;baldesp;valor_pago;orgao>0;

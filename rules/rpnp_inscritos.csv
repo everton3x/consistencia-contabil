@@ -1,0 +1,4 @@
+rule;side;dataset;field;filter;minus
+Restos a Pagar Não Processados inscritos;left;balver;saldo_atual_debito;conta_contabil.str.startswith('5.3.1.1.');
+Restos a Pagar Não Processados inscritos;left;balver;saldo_atual_credito;conta_contabil.str.startswith('5.3.1.1.');1
+Restos a Pagar Não Processados inscritos;right;rp;saldo_inicial_nao_processados;ano_empenho==(ano_base - 1);

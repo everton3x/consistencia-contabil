@@ -1,0 +1,11 @@
+rule;side;dataset;field;filter;minus
+DDR disponível;left;balver;saldo_atual_credito;conta_contabil.str.startswith('8.2.1.1.1.');
+DDR disponível;left;balver;saldo_atual_debito;conta_contabil.str.startswith('8.2.1.1.1.');1
+DDR disponível;right;balver;saldo_atual_debito;conta_contabil.str.startswith('1.') & indicador_superavit_financeiro=='F';
+DDR disponível;right;balver;saldo_atual_credito;conta_contabil.str.startswith('1.') & indicador_superavit_financeiro=='F';1
+DDR disponível;right;balver;saldo_atual_credito;conta_contabil.str.startswith('2.1.') & indicador_superavit_financeiro=='F';1
+DDR disponível;right;balver;saldo_atual_debito;conta_contabil.str.startswith('2.1.') & indicador_superavit_financeiro=='F';
+DDR disponível;right;balver;saldo_atual_credito;conta_contabil.str.startswith('2.2.') & indicador_superavit_financeiro=='F';1
+DDR disponível;right;balver;saldo_atual_debito;conta_contabil.str.startswith('2.2.') & indicador_superavit_financeiro=='F';
+DDR disponível;right;balver;saldo_atual_credito;conta_contabil.str.startswith('8.2.1.1.2.');1
+DDR disponível;right;balver;saldo_atual_debito;conta_contabil.str.startswith('8.2.1.1.2.');

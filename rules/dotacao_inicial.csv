@@ -1,0 +1,4 @@
+rule;side;dataset;field;filter;minus
+Dotação inicial;left;balver;saldo_atual_debito;conta_contabil.str.startswith('5.2.2.1.1.01.');
+Dotação inicial;left;balver;saldo_atual_credito;conta_contabil.str.startswith('5.2.2.1.1.01.');1
+Dotação inicial;right;baldesp;dotacao_inicial;orgao>0;

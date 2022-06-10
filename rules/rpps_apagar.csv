@@ -1,0 +1,4 @@
+rule;side;dataset;field;filter;minus
+Contribuição previdenciária ao RPPS a pagar;left;balver;saldo_atual_credito;conta_contabil.str.startswith('2.1.1.4.2.01.02.');
+Contribuição previdenciária ao RPPS a pagar;left;balver;saldo_atual_debito;conta_contabil.str.startswith('2.1.1.4.2.01.02.');1
+Contribuição previdenciária ao RPPS a pagar;right;baldesp;a_pagar;elemento=='3.1.91.13';

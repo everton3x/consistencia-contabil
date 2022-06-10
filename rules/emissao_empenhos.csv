@@ -1,0 +1,4 @@
+rule;side;dataset;field;filter;minus
+Emissão de empenhos;left;balver;saldo_atual_debito;conta_contabil.str.startswith('5.2.2.9.2.01.');
+Emissão de empenhos;left;balver;saldo_atual_credito;conta_contabil.str.startswith('5.2.2.9.2.01.');1
+Emissão de empenhos;right;baldesp;valor_empenhado;orgao>0;

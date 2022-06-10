@@ -1,0 +1,4 @@
+rule;side;dataset;field;filter;minus
+Crédito adicional - especial;left;balver;saldo_atual_debito;conta_contabil.str.startswith('5.2.2.1.2.02.');
+Crédito adicional - especial;left;balver;saldo_atual_credito;conta_contabil.str.startswith('5.2.2.1.2.02.');1
+Crédito adicional - especial;right;baldesp;creditos_especiais;orgao>0;

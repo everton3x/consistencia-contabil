@@ -28,29 +28,185 @@ entidades = {
     0: {
         'orgaos': (2, 3, 4, 5, 6, 7, 8, 9, 10, 11),
         'nome': 'Prefeitura',
-        #'rules': ('agnostic.csv', 'pm.csv')
-        'rules': ('agnostic.csv',)
+        'rules': (
+            'info_patrim.csv',
+            'info_orc.csv',
+            'info_controle.csv',
+            'suprim.csv',
+            'parcerias_apropriar.csv',
+            'precatorios_apagar.csv',
+            'rpps_apagar.csv',
+            'rgps_apagar.csv',
+            'fgts_apagar.csv',
+            'rpp_apagar.csv',
+            'pasep_apagar.csv',
+            'prev_rec_inicial.csv',
+            'prev_ded_fundeb_inicial.csv',
+            'prev_outras_ded_inicial.csv',
+            'reestimativa_receita.csv',
+            'dotacao_inicial.csv',
+            'credito_suplementar.csv',
+            'credito_especial.csv',
+            'credito_especial_reaberto.csv',
+            'credito_extraordinario.csv',
+            'credito_superavit.csv',
+            'credito_excesso.csv',
+            'credito_anulacao.csv',
+            'credito_reabertura.csv',
+            'anulacao_dotacao.csv',
+            'emissao_empenhos.csv',
+            'rpnp_inscritos.csv',
+            'rpnp_inscritos_anterior.csv',
+            'rpnp_inscricao_exe.csv',
+            'rpp_inscritos.csv',
+            'rpp_inscritos_anterior.csv',
+            'rpp_inscricao_exe.csv',
+            'receita_arealizar.csv',
+            'receita_realizada.csv',
+            'deducao_receita_fundeb.csv',
+            'deducao_receita_renuncia.csv',
+            'deducao_receita_outras.csv',
+            'empenhado_aliquidar.csv',
+            'liquidado_apagar.csv',
+            'pago.csv',
+            'rpnp_aliquidar.csv',
+            'rpnp_apagar.csv',
+            'rpnp_pago.csv',
+            'rpnp_cancelado.csv',
+            'rpp_pago.csv',
+            'rnp_cancelado.csv',
+            'niveis_orc.csv',
+            'niveis_controle.csv',
+            'disponibilidades.csv',
+            'resultado_financeiro.csv',
+            'resultado.csv',
+            'situacao.csv',
+            'ddr_disponivel.csv',
+            'ddr_empenhada.csv',
+            'ddr_liquidada.csv',
+            'ddr_utilizada.csv'
+        )
     },
     1: {
         'orgaos': (12,),
         'nome': 'FPSM',
-        'rules': ('agnostic.csv', 'rpps.csv')
+        'rules': (
+            'info_patrim.csv',
+            'info_orc.csv',
+            'info_controle.csv',
+            'suprim.csv',
+            'rpps_apagar.csv',
+            'rpp_apagar.csv',
+            'pasep_apagar.csv',
+            'prev_rec_inicial.csv',
+            'prev_outras_ded_inicial.csv',
+            'reestimativa_receita.csv',
+            'dotacao_inicial.csv',
+            'credito_suplementar.csv',
+            'credito_especial.csv',
+            'credito_especial_reaberto.csv',
+            'credito_extraordinario.csv',
+            'credito_superavit.csv',
+            'credito_excesso.csv',
+            'credito_anulacao.csv',
+            'credito_reabertura.csv',
+            'anulacao_dotacao.csv',
+            'emissao_empenhos.csv',
+            'rpnp_inscritos.csv',
+            'rpnp_inscritos_anterior.csv',
+            'rpnp_inscricao_exe.csv',
+            'rpp_inscritos.csv',
+            'rpp_inscritos_anterior.csv',
+            'rpp_inscricao_exe.csv',
+            'receita_arealizar.csv',
+            'receita_realizada.csv',
+            'deducao_receita_outras.csv',
+            'empenhado_aliquidar.csv',
+            'liquidado_apagar.csv',
+            'pago.csv',
+            'rpnp_aliquidar.csv',
+            'rpnp_apagar.csv',
+            'rpnp_pago.csv',
+            'rpnp_cancelado.csv',
+            'rpp_pago.csv',
+            'rnp_cancelado.csv',
+            'niveis_orc.csv',
+            'niveis_controle.csv',
+            'disponibilidades.csv',
+            'resultado_financeiro.csv',
+            'resultado.csv',
+            'situacao.csv',
+            'ddr_disponivel.csv',
+            'ddr_empenhada.csv',
+            'ddr_liquidada.csv',
+            'ddr_utilizada.csv'
+        )
     },
     2: {
         'orgaos': (1,),
         'nome': 'Câmara de Vereadores',
-        'rules': ('agnostic.csv', 'cm.csv')
+        'rules': (
+            'info_patrim.csv',
+            'info_orc.csv',
+            'info_controle.csv',
+            'suprim.csv',
+            'rpps_apagar.csv',
+            'rgps_apagar.csv',
+            'fgts_apagar.csv',
+            'rpp_apagar.csv',
+            'pasep_apagar.csv',
+            'dotacao_inicial.csv',
+            'credito_suplementar.csv',
+            'credito_especial.csv',
+            'credito_especial_reaberto.csv',
+            'credito_extraordinario.csv',
+            'credito_superavit.csv',
+            'credito_anulacao.csv',
+            'credito_reabertura.csv',
+            'anulacao_dotacao.csv',
+            'emissao_empenhos.csv',
+            'rpnp_inscritos.csv',
+            'rpnp_inscritos_anterior.csv',
+            'rpnp_inscricao_exe.csv',
+            'rpp_inscritos.csv',
+            'rpp_inscritos_anterior.csv',
+            'rpp_inscricao_exe.csv',
+            'empenhado_aliquidar.csv',
+            'liquidado_apagar.csv',
+            'pago.csv',
+            'rpnp_aliquidar.csv',
+            'rpnp_apagar.csv',
+            'rpnp_pago.csv',
+            'rpnp_cancelado.csv',
+            'rpp_pago.csv',
+            'rnp_cancelado.csv',
+            'niveis_orc.csv',
+            'niveis_controle.csv',
+            'disponibilidades.csv',
+            'resultado_financeiro.csv',
+            'resultado.csv',
+            'situacao.csv',
+            'ddr_disponivel.csv',
+            'ddr_empenhada.csv',
+            'ddr_utilizada.csv'
+        )
     },
     9: {
         'orgaos': (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12),
         'nome': 'Município (Agregado)',
-        'rules': ('mun.csv',)
+        'rules': (
+            'receita_despesa_intra.csv',
+            'intra_ofss_ativo_passivo.csv',
+            'intra_ofss_resultado.csv',
+            'contribuicao_previdenciaria_areceber.csv'
+        )
     }
 }
 rulesdir = r'rules'
 padcsvdir = r'C:\Users\Everton\OneDrive\Prefeitura\PAD'
 outputdir = r'output'
 templatesdir = r'templates'
+datasetspath = r'datasets/datasets.xlsx'
 
 # Parse command line arguments
 logging.info('Identificando argumentos da linha de comando...')
@@ -96,6 +252,62 @@ datasets['balver'] = df[
     (df['orgao'].isin(profile['orgaos']))
     & (df['escrituracao'] == 'S')
 ].copy()
+
+# bal_desp
+logging.debug('...BAL_DESP.txt')
+dados = StringIO(str(from_path(path.join(csvdir, 'bal_desp.csv')).best()))
+df = pd.read_csv(dados, sep=';', parse_dates=True, infer_datetime_format=True, decimal=',', thousands='.', dtype={'elemento': str})
+datasets['baldesp'] = df[df['orgao'].isin(profile['orgaos'])].copy()
+datasets['baldesp']['dotacao_atualizada'] = round(datasets['baldesp'].dotacao_inicial + datasets['baldesp'].atualizacao_monetaria + datasets['baldesp'].creditos_suplementares + datasets['baldesp'].creditos_especiais + datasets['baldesp'].creditos_extraordinarios - datasets['baldesp'].reducao_dotacao + datasets['baldesp'].suplementacao_recurso_vinculado - datasets['baldesp'].reducao_recurso_vinculado + datasets['baldesp'].transferencia + datasets['baldesp'].transposicao + datasets['baldesp'].remanejamento, 2)
+datasets['baldesp']['a_empenhar'] = round(datasets['baldesp'].dotacao_atualizada - datasets['baldesp'].valor_empenhado, 2)
+datasets['baldesp']['a_liquidar'] = round(datasets['baldesp'].valor_empenhado - datasets['baldesp'].valor_liquidado, 2)
+datasets['baldesp']['a_pagar'] = round(datasets['baldesp'].valor_liquidado - datasets['baldesp'].valor_pago, 2)
+
+# liquidacao
+logging.debug('...LIQUIDACAO.txt')
+dados = StringIO(str(from_path(path.join(csvdir, 'liquidacao.csv')).best()))
+df = pd.read_csv(dados, sep=';', parse_dates=True, infer_datetime_format=True, decimal=',', thousands='.', dtype={'rubrica': str})
+datasets['liquidacao'] = df[df['orgao'].isin(profile['orgaos'])].copy()
+
+# pagamento
+logging.debug('...PAGAMENTO.txt')
+dados = StringIO(str(from_path(path.join(csvdir, 'pagamento.csv'), threshold=0.5).best()))
+df = pd.read_csv(dados, sep=';', parse_dates=True, infer_datetime_format=True, decimal=',', thousands='.', dtype={'rubrica': str})
+datasets['pagamento'] = df[df['orgao'].isin(profile['orgaos'])].copy()
+
+# restos_pagar
+logging.debug('...RESTOS_PAGAR.txt')
+dados = StringIO(str(from_path(path.join(csvdir, 'restos_pagar.csv'), threshold=0.5).best()))
+df = pd.read_csv(dados, sep=';', parse_dates=True, infer_datetime_format=True, decimal=',', thousands='.', dtype={'rubrica': str})
+ano_base = datetime.strptime(df['data_final'].max(), '%Y-%m-%d').year
+df['ano_base'] = ano_base
+datasets['rp'] = df[df['orgao'].isin(profile['orgaos'])].copy()
+
+# bal_rec_alt
+logging.debug('...BAL_REC_ALT.txt')
+dados = StringIO(str(from_path(path.join(csvdir, 'bal_rec_alt.csv'), threshold=0.5).best()))
+df = pd.read_csv(dados, sep=';', parse_dates=True, infer_datetime_format=True, decimal=',', thousands='.', dtype={'codigo_receita': str})
+datasets['balrec'] = df[
+    (df['orgao'].isin(profile['orgaos']))
+    & (df['tipo_nivel'] == 'A')
+].copy()
+
+# decreto
+logging.debug('...DECRETO.txt')
+dados = StringIO(str(from_path(path.join(csvdir, 'decreto.csv'), threshold=0.5).best()))
+df = pd.read_csv(dados, sep=';', parse_dates=True, infer_datetime_format=True, decimal=',', thousands='.')
+df['orgao'] = 2
+df.loc[df['entidade'].str.startswith('CAMARA'), 'orgao'] = 1
+df.loc[df['recurso_vinculado_suplementacao_demais_tce']==50, 'orgao'] = 12
+df.loc[df['recurso_vinculado_reducao_tce']==50, 'orgao'] = 12
+datasets['decreto'] = df[df['orgao'].isin(profile['orgaos'])].copy()
+
+# Salva os datasets para auditoria e testes
+logging.info('Salvando datasets...')
+dsw = pd.ExcelWriter(datasetspath, engine='xlsxwriter')
+for sheet, data in datasets.items():
+    data.to_excel(dsw, sheet_name=sheet)
+dsw.save()
 
 # Cria a lista de nomes de regras
 logging.info('Montando lista de regras...')

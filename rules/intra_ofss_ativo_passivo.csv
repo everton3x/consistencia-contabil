@@ -1,0 +1,5 @@
+rule;side;dataset;field;filter;minus
+Movimentação contábil intra-OFSS: Ativo vs Passivo;left;balver;saldo_atual_debito;conta_contabil.str.contains(r'^1.......2', regex=True);
+Movimentação contábil intra-OFSS: Ativo vs Passivo;left;balver;saldo_atual_credito;conta_contabil.str.contains(r'^1.......2', regex=True);1
+Movimentação contábil intra-OFSS: Ativo vs Passivo;right;balver;saldo_atual_credito;conta_contabil.str.contains(r'^2.......2', regex=True);
+Movimentação contábil intra-OFSS: Ativo vs Passivo;right;balver;saldo_atual_debito;conta_contabil.str.contains(r'^2.......2', regex=True);1

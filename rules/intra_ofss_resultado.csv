@@ -1,0 +1,5 @@
+rule;side;dataset;field;filter;minus
+Movimentação contábil intra-OFSS: VPD vs VPA;left;balver;saldo_atual_debito;conta_contabil.str.contains(r'^3.......2', regex=True);
+Movimentação contábil intra-OFSS: VPD vs VPA;left;balver;saldo_atual_credito;conta_contabil.str.contains(r'^3.......2', regex=True);1
+Movimentação contábil intra-OFSS: VPD vs VPA;right;balver;saldo_atual_credito;conta_contabil.str.contains(r'^4.......2', regex=True);
+Movimentação contábil intra-OFSS: VPD vs VPA;right;balver;saldo_atual_debito;conta_contabil.str.contains(r'^4.......2', regex=True);1

@@ -1,0 +1,9 @@
+rule;side;dataset;field;filter;minus
+Crédito empenhado a liquidar;left;balver;saldo_atual_credito;conta_contabil.str.startswith('6.2.2.1.3.01.');
+Crédito empenhado a liquidar;left;balver;saldo_atual_debito;conta_contabil.str.startswith('6.2.2.1.3.01.');1
+Crédito empenhado a liquidar;right;baldesp;valor_empenhado;orgao>0;
+Crédito empenhado a liquidar;right;baldesp;valor_liquidado;orgao>0;1
+Empenhos a liquidar;left;balver;saldo_atual_credito;conta_contabil.str.startswith('6.2.2.9.2.01.01.');
+Empenhos a liquidar;left;balver;saldo_atual_debito;conta_contabil.str.startswith('6.2.2.9.2.01.01.');1
+Empenhos a liquidar;right;baldesp;valor_empenhado;orgao>0;
+Empenhos a liquidar;right;baldesp;valor_liquidado;orgao>0;1

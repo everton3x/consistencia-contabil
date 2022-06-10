@@ -1,0 +1,5 @@
+rule;side;dataset;field;filter;minus
+Receita a realizar;left;balver;saldo_atual_credito;conta_contabil.str.startswith('6.2.1.1.');
+Receita a realizar;left;balver;saldo_atual_debito;conta_contabil.str.startswith('6.2.1.1.');1
+Receita a realizar;right;balrec;previsao_atualizada;orgao>0;
+Receita a realizar;right;balrec;receita_realizada;orgao>0;1

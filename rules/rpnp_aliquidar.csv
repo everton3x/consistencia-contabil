@@ -1,0 +1,6 @@
+rule;side;dataset;field;filter;minus
+Restos Não Processados a Liquidar;left;balver;saldo_atual_credito;conta_contabil.str.startswith('6.3.1.1.');
+Restos Não Processados a Liquidar;left;balver;saldo_atual_debito;conta_contabil.str.startswith('6.3.1.1.');1
+Restos Não Processados a Liquidar;right;rp;saldo_inicial_nao_processados;orgao>0;
+Restos Não Processados a Liquidar;right;rp;nao_processados_liquidados;orgao>0;1
+Restos Não Processados a Liquidar;right;rp;nao_processados_cancelados;orgao>0;1

@@ -1,0 +1,7 @@
+rule;side;dataset;field;filter;minus
+Disponibilidades;left;balver;saldo_atual_debito;conta_contabil.str.startswith('7.2.1.1.');
+Disponibilidades;left;balver;saldo_atual_credito;conta_contabil.str.startswith('7.2.1.1.');1
+Disponibilidades;left;balver;saldo_atual_credito;conta_contabil.str.startswith('8.2.1.1.4.');1
+Disponibilidades;left;balver;saldo_atual_debito;conta_contabil.str.startswith('8.2.1.1.4.');
+Disponibilidades;right;balver;saldo_atual_debito;conta_contabil.str.startswith('1.') & indicador_superavit_financeiro=='F';
+Disponibilidades;right;balver;saldo_atual_credito;conta_contabil.str.startswith('1.') & indicador_superavit_financeiro=='F';1

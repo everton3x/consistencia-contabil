@@ -1,0 +1,4 @@
+rule;side;dataset;field;filter;minus
+Outras deduções da receita;left;balver;saldo_atual_credito;conta_contabil.str.startswith('6.2.1.3.9.');1
+Outras deduções da receita;left;balver;saldo_atual_debito;conta_contabil.str.startswith('6.2.1.3.9.');
+Outras deduções da receita;right;balrec;receita_realizada;(caracteristica_peculiar_receita!=101) & (caracteristica_peculiar_receita!=103) & (caracteristica_peculiar_receita!=105) & (caracteristica_peculiar_receita!=0);1

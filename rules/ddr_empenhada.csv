@@ -1,0 +1,7 @@
+rule;side;dataset;field;filter;minus
+DDR comprometida por empenho;left;balver;saldo_atual_credito;conta_contabil.str.startswith('8.2.1.1.2.');
+DDR comprometida por empenho;left;balver;saldo_atual_debito;conta_contabil.str.startswith('8.2.1.1.2.');1
+DDR comprometida por empenho;right;balver;saldo_atual_credito;conta_contabil.str.startswith('6.2.2.1.3.01.');
+DDR comprometida por empenho;right;balver;saldo_atual_debito;conta_contabil.str.startswith('6.2.2.1.3.01.');1
+DDR comprometida por empenho;right;balver;saldo_atual_credito;conta_contabil.str.startswith('6.3.1.1.');
+DDR comprometida por empenho;right;balver;saldo_atual_debito;conta_contabil.str.startswith('6.3.1.1.');1

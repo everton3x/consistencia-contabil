@@ -1,0 +1,4 @@
+rule;side;dataset;field;filter;minus
+Restos Não Processados Cancelados;left;balver;saldo_atual_credito;conta_contabil.str.startswith('6.3.1.9.');
+Restos Não Processados Cancelados;left;balver;saldo_atual_debito;conta_contabil.str.startswith('6.3.1.9.');1
+Restos Não Processados Cancelados;right;rp;nao_processados_cancelados;ano_empenho==(ano_base - 1);

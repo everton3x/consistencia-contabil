@@ -1,0 +1,5 @@
+rule;side;dataset;field;filter;minus
+Reestimativa da receita;left;balver;saldo_atual_debito;conta_contabil.str.startswith('5.2.1.2.1.01.');
+Reestimativa da receita;left;balver;saldo_atual_credito;conta_contabil.str.startswith('5.2.1.2.1.01.');1
+Reestimativa da receita;right;balrec;previsao_atualizada;orgao>0;
+Reestimativa da receita;right;balrec;receita_orcada;orgao>0;1

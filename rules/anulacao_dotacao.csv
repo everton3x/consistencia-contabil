@@ -1,0 +1,4 @@
+rule;side;dataset;field;filter;minus
+Cancelamento/Anulação de dotações;left;balver;saldo_atual_debito;conta_contabil.str.startswith('5.2.2.1.9.04.');1
+Cancelamento/Anulação de dotações;left;balver;saldo_atual_credito;conta_contabil.str.startswith('5.2.2.1.9.04.');
+Cancelamento/Anulação de dotações;right;baldesp;reducao_dotacao;orgao>0;

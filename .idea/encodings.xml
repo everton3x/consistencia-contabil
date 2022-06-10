@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/rules/agnostic.csv" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/rules/contribuicao_previdenciaria_areceber.csv" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/rules/info_controle.csv" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/rules/info_orc.csv" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/rules/info_patrim.csv" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/rules/intra_ofss_ativo_passivo.csv" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/rules/intra_ofss_resultado.csv" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/rules/niveis_controle.csv" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/rules/niveis_orc.csv" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/rules/parcerias_apropriar.csv" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/rules/pm.csv" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/rules/suprim.csv" charset="windows-1252" />
   </component>
 </project>

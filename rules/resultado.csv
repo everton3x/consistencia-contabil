@@ -1,0 +1,9 @@
+rule;side;dataset;field;filter;minus
+Resultado do período;left;balver;saldo_atual_debito;conta_contabil.str.startswith('1.');
+Resultado do período;left;balver;saldo_atual_credito;conta_contabil.str.startswith('1.');1
+Resultado do período;left;balver;saldo_atual_credito;conta_contabil.str.startswith('2.');1
+Resultado do período;left;balver;saldo_atual_debito;conta_contabil.str.startswith('2.');
+Resultado do período;right;balver;saldo_atual_credito;conta_contabil.str.startswith('4.');
+Resultado do período;right;balver;saldo_atual_debito;conta_contabil.str.startswith('4.');1
+Resultado do período;right;balver;saldo_atual_debito;conta_contabil.str.startswith('3.');1
+Resultado do período;right;balver;saldo_atual_credito;conta_contabil.str.startswith('3.');

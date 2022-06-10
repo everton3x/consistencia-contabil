@@ -1,0 +1,4 @@
+rule;side;dataset;field;filter;minus
+Restos a Pagar Processados inscritos - anos anteriores;left;balver;saldo_atual_debito;conta_contabil.str.startswith('5.3.2.2.');
+Restos a Pagar Processados inscritos - anos anteriores;left;balver;saldo_atual_credito;conta_contabil.str.startswith('5.3.2.2.');1
+Restos a Pagar Processados inscritos - anos anteriores;right;rp;saldo_inicial_processados;ano_empenho<(ano_base - 1);
