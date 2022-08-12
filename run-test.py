@@ -198,7 +198,8 @@ entidades = {
             'receita_despesa_intra.csv',
             'intra_ofss_ativo_passivo.csv',
             'intra_ofss_resultado.csv',
-            'contribuicao_previdenciaria_areceber.csv'
+            'contribuicao_previdenciaria_areceber.csv',
+            'suplementacao_reducao_outra_entidade.csv'
         )
     }
 }

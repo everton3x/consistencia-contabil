@@ -395,6 +395,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\rules\suplementacao_reducao_outra_entidade.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\rules\suprim.csv">
           <value>
             <Attribute>
