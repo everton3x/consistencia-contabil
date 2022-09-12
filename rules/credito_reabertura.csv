@@ -1,4 +1,4 @@
 rule;side;dataset;field;filter;minus
 Dotação adicional por fonte - reabertura;left;balver;saldo_atual_debito;conta_contabil.str.startswith('5.2.2.1.3.06.');
 Dotação adicional por fonte - reabertura;left;balver;saldo_atual_credito;conta_contabil.str.startswith('5.2.2.1.3.06.');1
-Dotação adicional por fonte - reabertura;right;decreto;valor_saldo_reaberto;orgao>0;
+Dotação adicional por fonte - reabertura;right;decreto;valor_saldo_reaberto;valor_saldo_reaberto>0;
