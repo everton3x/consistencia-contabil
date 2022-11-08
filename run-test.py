@@ -209,7 +209,7 @@ entidades = {
     }
 }
 rulesdir = r'rules'
-padcsvdir = r'C:\Users\Everton\OneDrive\Prefeitura\PAD'
+padcsvdir = r'C:\Users\Everton\Desktop\Prefeitura\PAD'
 outputdir = r'output'
 templatesdir = r'templates'
 datasetspath = r'datasets/datasets.xlsx'

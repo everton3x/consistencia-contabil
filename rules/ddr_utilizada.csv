@@ -10,5 +10,5 @@ DDR utilizada;right;balver;saldo_atual_debito;conta_contabil.str.startswith('6.3
 DDR utilizada;right;balver;movimentacao_credito;conta_contabil.str.startswith('1.1.3.') & indicador_superavit_financeiro=='F';
 DDR utilizada;right;balver;movimentacao_debito;conta_contabil.str.startswith('2.1.8.8.') & indicador_superavit_financeiro=='F';
 DDR utilizada;right;balver;movimentacao_debito;conta_contabil.str.startswith('2.1.8.8.1.04.99.') & indicador_superavit_financeiro=='F';1
-DDR utilizada;right;balver;saldo_atual_debito;conta_contabil.str.startswith('3.5.1.');
-DDR utilizada;right;balver;saldo_atual_credito;conta_contabil.str.startswith('3.5.1.');
+DDR utilizada;right;balver;saldo_atual_debito;conta_contabil.str.startswith('3.5.1.1.');
+DDR utilizada;right;balver;saldo_atual_credito;conta_contabil.str.startswith('3.5.1.1.');
